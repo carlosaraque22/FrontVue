@@ -42,7 +42,7 @@ export default {
         const hola = await api.login(this.email, this.password);
         console.log(hola);
         if (hola.data == true) {
-          this.$router.push({ path: "Home" });
+          // this.$router.push({ path: "Home" });
         } else {
           console.log("false");
         }
