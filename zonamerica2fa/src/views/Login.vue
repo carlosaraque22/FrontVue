@@ -1,7 +1,8 @@
 <template>
   <div class="login">
     <h1 class="title">Log in</h1>
-    <form action class="form">
+    <form action class="form" @submit.prevent="login">
+      >
       <label class="form-label" for="#email">Email:</label>
       <input
         v-model="email"
@@ -38,15 +39,15 @@ export default {
   methods: {
     async login() {
       try {
-        await api.login(this.email, this.password);
-        console.log(res.data);
-        if (res.data == true) {
+        const hola = await api.login(this.email, this.password);
+        console.log(hola);
+        if (hola.data == true) {
           this.$router.push({ path: "Home" });
         } else {
           console.log("false");
         }
       } catch (error) {
-        console.log(error)
+        console.log(error);
         this.error = true;
       }
     },
