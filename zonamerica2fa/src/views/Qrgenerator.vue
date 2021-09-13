@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <h1>Zonamerica Uruguay</h1>
-    <img alt="ZA logo" src="../assets/ZA_logo.png">
-    <HelloWorld msg="Crea tu token personal"/>
+    <HelloWorld/>
   </div>
 </template>
 

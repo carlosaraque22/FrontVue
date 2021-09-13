@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <ul>
+       <ul>
       <li><a href="/qrcode/qrgenerator">Home</a></li>
       <li><a href="/qrcode/modificarqr">News</a></li>
     </ul>
     <form action class="form1" @submit.prevent="login">
       <img alt="ZA logo" src="../assets/ZA_logo.png" />
-      <label class="form-label1" for="#usuario">Usuario</label>
+      <label class="form-label1" for="#usuario">Usuario a modificar</label>
       <input
         class="form-input"
         type="text"
@@ -15,7 +15,7 @@
         placeholder="Usuario..."
       />
       <p v-if="error1" class="error1">Por favor introduzca un usuario.</p>
-      <p v-if="error2" class="error2">Este usuario ya tiene un qr asignado.</p>
+      <p v-if="error2" class="error2">Este usuario no tiene un qr asignado.</p>
       <img
         v-show="qrcode"
         id="qrcodegenerate"
@@ -28,6 +28,7 @@
         <button class="boton1" type="button">Descargar</button>
       </a>
       <input
+        v-if="submit"
         class="form-submit"
         v-on:click="onClick"
         type="submit"
@@ -58,7 +59,7 @@ export default {
     error1: false,
     error2: false,
     qrcode: false,
-    usuario1: "",
+    submit: true, 
   }),
   methods: {
     onClick: async function () {
@@ -74,12 +75,12 @@ export default {
           const qrimgdownload1 = document.getElementById("btn");
           qrimgdownload1.setAttribute("download", "qrcode " + usuario);
           const prueba1 = await axios.post(
-            `http://tomcat-testing:8071/test/generar_usuario?user=${usuario}`
+            `http://tomcat-testing:8071/test/modificar_usuario?user=${usuario}`
           );
           if (prueba1.data === "Error-2") {
             this.error2 = true;
             this.qrcode = false;
-            console.log("Este usuario ya tiene un qr activo");
+            console.log("Este usuario no tiene un qr activo");
           } else {
             QRCode.toDataURL(prueba1.data, (err, data_url) => {
               const qrcodeurl = data_url;
@@ -89,6 +90,7 @@ export default {
               qrimg.setAttribute("src", qrcodeurl);
               this.error2 = false;
               this.qrcode = true;
+              this.submit = false;
             });
           }
         }

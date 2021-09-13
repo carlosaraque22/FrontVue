@@ -1,0 +1,126 @@
+li {
+    float: left;
+    display: inline;
+}
+
+a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+}
+
+body {
+    background-image: url("./Zonamerica.jpg");
+}
+
+.form1 {
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    min-width: 350px;
+    max-width: 100%;
+    background: rgb(254, 255, 255);
+    border-radius: 5px;
+    padding: 40px;
+    box-shadow: 0 4px 10px 4px rgba(7, 7, 7, 0.76);
+}
+
+.form-label1 {
+    margin-top: 2rem;
+    font-size: 20px;
+    color: #7A7876;
+    margin-bottom: 1rem;
+    &:first-of-type {
+        margin-top: 0rem;
+    }
+}
+
+.form-input {
+    padding: 13px 15px;
+    background: none;
+    background-image: none;
+    border-radius: 5px;
+    font-size: 15px;
+    border: 2px solid #7A7876;
+    box-shadow: 2px 4px 4px rgba(7, 7, 7, 0.76);
+    color: #7A7876;
+    &:focus {
+        outline: 0;
+        border-color: #1ab188;
+    }
+}
+
+.form-submit {
+    background: #149452;
+    border: none;
+    color: white;
+    margin-top: 2rem;
+    font-size: 20px;
+    padding: 1rem 0;
+    cursor: pointer;
+    box-shadow: 2px 4px 4px rgba(7, 7, 7, 0.76);
+    border-radius: 5px;
+    transition: background 0.2s;
+    &:hover {
+        background: #0b9185;
+    }
+}
+
+.form-submit1 {
+    background: #7A7876;
+    border: none;
+    color: white;
+    margin-top: 4rem;
+    font-size: 18px;
+    padding: 0.6rem 0;
+    height: 10;
+    width: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 4px 4px rgba(7, 7, 7, 0.76);
+    transition: background 0.2s;
+    &:hover {
+        background: #0b9185;
+    }
+}
+
+.error2 {
+    color: black;
+    font-size: 25px;
+    font-family: 'Kaisei Tokumin', serif;
+    margin-top: 50px;
+}
+
+.error1 {
+    color: black;
+    font-size: 25px;
+    font-family: 'Kaisei Tokumin', serif;
+    margin-top: 50px;
+}
+
+.js-qrcode {
+    margin: auto;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px 4px rgba(7, 7, 7, 0.76);
+}
+
+.boton1 {
+    background: #7A7876;
+    ;
+    border: none;
+    color: white;
+    margin-top: 2rem;
+    font-size: 20px;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 4px rgba(7, 7, 7, 0.76);
+    border-radius: 5px;
+    transition: background 0.2s;
+    &:hover {
+        background: #0b9185;
+    }
+}

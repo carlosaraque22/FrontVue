@@ -3,7 +3,7 @@
     <!-- <router-link to="/">Login</router-link> |
     <router-link to="/Home">Home</router-link> -->
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <style>
